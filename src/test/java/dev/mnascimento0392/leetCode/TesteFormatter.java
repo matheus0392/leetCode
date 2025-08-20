@@ -18,4 +18,11 @@ public class TesteFormatter {
 		System.out.println();
 		assertEquals(a, b);
 	}
+
+	public static void assertFormatted(Object a, Object b) {
+		System.out.println(String.format("out: %s  expected: %s %s", a, b, a.equals(b) ? "OK" : ""));
+		System.out.println();
+		assertEquals(a, b);
+	}
+
 }
