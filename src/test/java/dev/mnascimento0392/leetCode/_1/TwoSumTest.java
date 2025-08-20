@@ -1,6 +1,6 @@
 package dev.mnascimento0392.leetCode._1;
 
-import static dev.mnascimento0392.leetCode.TesteFormatter.assertArrayFormatted;
+import static dev.mnascimento0392.leetCode.TestFormatter.*;
 
 import org.junit.jupiter.api.Test;
 

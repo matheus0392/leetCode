@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class TesteFormatter {
+public class TestFormatter {
 
 	public static void assertArrayFormatted(int[] a, int[] b) {
 		System.out.println(String.format("out: %s  expected: %s %s", Arrays.toString(a), Arrays.toString(b),
@@ -13,7 +13,7 @@ public class TesteFormatter {
 		assertEquals(Arrays.toString(a), Arrays.toString(b));
 	}
 
-	public static void assertintFormatted(int a, int b) {
+	public static void assertIntFormatted(int a, int b) {
 		System.out.println(String.format("out: %s  expected: %s %s", a, b, a == b ? "OK" : ""));
 		System.out.println();
 		assertEquals(a, b);
