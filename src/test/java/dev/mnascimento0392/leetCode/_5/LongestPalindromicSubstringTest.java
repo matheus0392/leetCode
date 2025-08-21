@@ -28,6 +28,12 @@ class LongestPalindromicSubstringTest {
 	void test2() {
 		assertFormatted(new Solution().longestPalindrome("cbbd"), "bb");
 	}
+	
+	@Test
+	void test3() {
+		assertFormatted(new Solution().longestPalindrome("a"), "a");
+	}
+
 
 
 }
