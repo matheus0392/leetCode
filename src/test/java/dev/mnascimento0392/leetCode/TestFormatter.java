@@ -1,9 +1,13 @@
 package dev.mnascimento0392.leetCode;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+@TestInstance(Lifecycle.PER_CLASS)
 public class TestFormatter {
 
 	public static void assertArrayFormatted(int[] a, int[] b) {

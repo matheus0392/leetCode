@@ -2,9 +2,20 @@ package dev.mnascimento0392.leetCode._2;
 
 import static dev.mnascimento0392.leetCode.TestFormatter.*;
 
-import org.junit.jupiter.api.Test;
+import java.util.logging.Level;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+@TestInstance(Lifecycle.PER_CLASS)
 class AddTwoNumbersTest {
+
+	@BeforeAll
+	void test() {
+		System.err.println("2. Add Two Numbers Test");
+	}
 
 	@Test
 	void test1() {
