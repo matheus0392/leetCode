@@ -20,16 +20,30 @@ class ReverseIntegerTest {
 
 	@Test
 	void test1() {
-		assertFormatted(new Solution().reverse(3), 3);
+		assertFormatted(new Solution().reverse(123), 321);
 	}
 
 	@Test
 	void test2() {
-		assertFormatted(new Solution().reverse(4), 4);
+		assertFormatted(new Solution().reverse(-123), -321);
 	}
 
 	@Test
 	void test3() {
+		assertFormatted(new Solution().reverse(120), 21);
+	}
+	
+	@Test
+	void test4() {
 		assertFormatted(new Solution().reverse(1), 1);
+	}
+	
+	@Test
+	void test5() {
+		assertFormatted(new Solution().reverse(10), 1);
+	}
+	@Test
+	void test6() {
+		assertFormatted(new Solution().reverse(100), 1);
 	}
 }
