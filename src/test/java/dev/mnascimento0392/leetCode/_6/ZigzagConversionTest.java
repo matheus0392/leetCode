@@ -29,5 +29,9 @@ class ZigzagConversionTest {
 	void test2() {
 		assertFormatted(new Solution().convert("PAYPALISHIRING", 4), "PINALSIGYAHRPI");
 	}
-
+	
+	@Test
+	void test3() {
+		assertFormatted(new Solution().convert("A", 1), "A");
+	}
 }
