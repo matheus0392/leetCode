@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
+import dev.mnascimento0392.leetCode._5.Solution;
 import lombok.extern.java.Log;
 
 @Log
