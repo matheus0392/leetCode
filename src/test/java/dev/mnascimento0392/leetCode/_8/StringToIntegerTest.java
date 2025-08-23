@@ -42,5 +42,30 @@ class StringToIntegerTest {
 	void test5() {
 		assertFormatted(new Solution().myAtoi("words and 987"), 0);
 	}
+	
+	@Test
+	void test6() {
+		assertFormatted(new Solution().myAtoi("-91283472332"), -2147483648);
+	}
+
+	@Test
+	void test7() {
+		assertFormatted(new Solution().myAtoi(""), 0);
+	}
+	
+	@Test
+	void test8() {
+		assertFormatted(new Solution().myAtoi("+1"), 1);
+	}
+	
+	@Test
+	void test9() {
+		assertFormatted(new Solution().myAtoi("-+12"), 0);
+	}
+	
+	@Test
+	void test10() {
+		assertFormatted(new Solution().myAtoi("20000000000000000000"), Integer.MAX_VALUE);
+	}
 
 }
