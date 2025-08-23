@@ -47,5 +47,11 @@ class PalindromeNumberTest {
 	void test6() {
 		assertFormatted(new Solution().isPalindrome(23232), true);
 	}
+	
+	@Test
+	void test7() {
+		assertFormatted(new Solution().isPalindrome(2332), true);
+	}
+
 
 }
