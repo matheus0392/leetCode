@@ -15,9 +15,9 @@ class Solution {
 			digits += 1;
 		}
 
-		for (int i = 0; i < digits/2; i++) {
-			int j = digits-i*2-1;
-			if (!((int)(x / Math.pow(10, j)) == x % 10)) {
+		for (int i = 0; i < digits / 2; i++) {
+			int j = digits - i * 2 - 1;
+			if (!((int) (x / Math.pow(10, j)) == x % 10)) {
 				return false;
 			}
 			x %= Math.pow(10, j);
