@@ -14,7 +14,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
@@ -48,10 +47,7 @@ public class TestFormatter {
 
 		System.out.println(String.format("out: %s  expected: %s %s", Arrays.toString(a), Arrays.toString(b),
 				Arrays.compare(a, b) == 0 ? "OK" : "ERR"));
-		/*
-		 * if (Arrays.compare(a, b) != 0) { System.err.println("ERR"); } else {
-		 * System.out.println(); }
-		 */
+
 		assertEquals(Arrays.toString(a), Arrays.toString(b));
 	}
 

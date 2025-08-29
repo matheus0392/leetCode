@@ -1,23 +1,13 @@
 package dev.mnascimento0392.leetCode._wc463q1;
 
-import static dev.mnascimento0392.leetCode.TestFormatter.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import dev.mnascimento0392.leetCode.TestFormatter;
-import junit.framework.Assert;
-import junit.framework.AssertionFailedError;
 import lombok.extern.java.Log;
 
 @Log
