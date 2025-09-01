@@ -14,6 +14,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -210,7 +211,7 @@ public class ChargeChallenge {
 
 		StringBuilder sb = new StringBuilder();
 
-		String className = questionTitle.replaceAll("\\s+", "");
+		String className = toCamelCase(questionTitle);
 		String functionName = metaData.getString("name");
 		JSONArray types = metaData.getJSONArray("params");
 
@@ -314,7 +315,12 @@ public class ChargeChallenge {
 		folder = "src/main/java/" + folder.substring(0, folder.lastIndexOf(".") + 1).replaceAll("\\.", "/") + "_"
 				+ questionId + "/";
 
-		return folder + questionTitle.replaceAll("\\s+", "");
+		return folder + toCamelCase(questionTitle);
+	}
+
+	static String toCamelCase(String string) {
+		return String.join("", Arrays.stream(string.split(" "))
+				.map(s -> Character.toUpperCase(s.charAt(0)) + s.substring(1)).toList());
 	}
 }
 

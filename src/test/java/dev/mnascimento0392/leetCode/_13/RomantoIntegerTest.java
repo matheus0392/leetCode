@@ -9,9 +9,9 @@ import lombok.extern.java.Log;
 
 @Log
 @TestInstance(Lifecycle.PER_CLASS)
-class RomantoIntegerTest extends TestFormatter {
+class RomanToIntegerTest extends TestFormatter {
 
-	RomantoIntegerTest() {
+	RomanToIntegerTest() {
 		setQuestion("13. Roman to Integer");
 	}
 
