@@ -61,7 +61,6 @@ public class ChargeChallenge {
 					.getJSONArray("queries").getJSONObject(1).getJSONObject("state").getJSONObject("data")
 					.getJSONObject("question");
 
-			System.out.println(jo_);
 			String codeSnippets = jo_.getJSONArray("codeSnippets").getJSONObject(1).getString("code");
 			JSONArray exampleTestcaseList = jo_.getJSONArray("exampleTestcaseList");
 			JSONArray hints = jo_.getJSONArray("hints");
@@ -90,9 +89,9 @@ public class ChargeChallenge {
 					+ questionId + "/";
 			Path path = Path.of(folder);
 
-			createDescription(folder, url, questionTitle, difficulty, questionId, htmlContent, topicTags, hints);
-
 			if (!path.toFile().exists()) {
+
+				createDescription(folder, url, questionTitle, difficulty, questionId, htmlContent, topicTags, hints);
 
 				createCodeFile(questionId, questionTitle, codeSnippets);
 
