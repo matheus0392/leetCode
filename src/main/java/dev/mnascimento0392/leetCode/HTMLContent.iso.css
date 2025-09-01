@@ -1,0 +1,341 @@
+.html pre {
+	@apply border-border-tertiary font-menlo text-text-secondary
+	my-4 overflow-visible whitespace-pre-wrap border-l-2 pl-4 text-sm;
+}
+
+.html pre strong {
+	@apply text-label-1;
+}
+
+:global(.dark) .html pre strong {
+	@apply text-dark-label-1;
+}
+
+.html a {
+	@apply text-blue-s;
+}
+
+:global(.dark) .html a {
+	@apply text-dark-blue-s;
+}
+
+.html ul {
+	@apply mx-4 mb-4 list-disc;
+}
+
+.html ol {
+	@apply mx-4 mb-4 list-decimal;
+}
+
+.html li {
+	@apply mb-3;
+}
+
+.html p {
+	@apply mb-4;
+}
+
+.html code {
+	@apply border-divider-3 bg-fill-4 font-menlo text-label-2
+	whitespace-pre-wrap rounded border px-0.5 py-0.5 text-xs;
+}
+
+:global(.dark) .html code {
+	@apply border-dark-divider-3 bg-dark-fill-4
+	text-dark-label-2;
+}
+
+.html blockquote {
+	@apply border-divider-3 text-label-2 border-l-4 pl-4;
+}
+
+:global(.dark) .html blockquote {
+	@apply border-dark-divider-3
+	text-dark-label-2;
+}
+
+:global(.content-example-testcase) {
+	@apply text-label-1 mb-4 text-base
+	font-medium;
+}
+
+:global(.dark .content-example-testcase) {
+	@apply text-dark-label-1;
+}
+
+.html img {
+	max-width: 100%;
+	height: auto !important;
+}
+
+.html .example {
+	@apply text-label-1 dark:text-label-1mb-4text-basefont-medium;
+}
+
+:global(.example-block) {
+	@apply border-border-tertiary
+	text-text-secondary my-4 overflow-visible border-l-2 pl-4 text-[14px];pre
+	{
+	@apply border-l-0 border-none pl-0;
+}
+
+:global(.example-io) {
+	@apply font-menlo text-[0.85rem];
+}
+
+pre:global(.example-io) {
+	@apply overflow-auto whitespace-pre;
+}
+
+}
+.html table {
+	box-shadow: 0 0 0 1px #e5e5e5;
+	@apply
+	text-label-1
+	mb-3
+	rounded-lg
+	border-hidden;
+}
+
+:global(.dark) .html table {
+	box-shadow: 0 0 0 1px #424242;
+	@apply
+	border-dark-gray-4
+	text-dark-label-1;
+}
+
+.html table th {
+	@apply border-gray-4 bg-fill-3 border-[1px] px-2.5 py-2
+	font-medium;
+}
+
+.html table th:first-child {
+	@apply rounded-tl-lg;
+}
+
+.html table th:last-child {
+	@apply rounded-tr-lg;
+}
+
+:global(.dark) .html table th {
+	@apply border-dark-gray-4 bg-dark-fill-3;
+}
+
+.html table td {
+	@apply border-gray-4 border-[1px] px-2.5 py-2;
+}
+
+:global(.dark) .html table td {
+	@apply border-dark-gray-4;
+}
+
+.html :global(.language-md .table) {
+	/*
+    FIXME: tailwind-css `.table` conflict with highlight.js `.table`,
+           which just have different meanings but with the same name
+     */
+	display: inline !important;
+}
+
+.elfjS pre {
+	border-color: var(--border-tertiary);
+	border-left-width: 2px;
+	color: var(--text-secondary);
+	font-family: Menlo, sans-serif;
+	font-size: .875rem;
+	line-height: 1.25rem;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	overflow: visible;
+	padding-left: 1rem;
+	white-space: pre-wrap
+}
+
+.elfjS pre strong {
+	--tw-text-opacity: 1;
+	color: rgb(38, 38, 38/ var( --tw-text-opacity))
+}
+
+.dark .elfjS pre strong {
+	--tw-text-opacity: 1;
+	color: rgb(255, 255, 255/ var( --tw-text-opacity))
+}
+
+.elfjS a {
+	--tw-text-opacity: 1;
+	color: rgb(0, 122, 255/ var( --tw-text-opacity))
+}
+
+.dark .elfjS a {
+	--tw-text-opacity: 1;
+	color: rgb(10, 132, 255/ var( --tw-text-opacity))
+}
+
+.elfjS ul {
+	list-style-type: disc
+}
+
+.elfjS ol, .elfjS ul {
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem
+}
+
+.elfjS ol {
+	list-style-type: decimal
+}
+
+.elfjS li {
+	margin-bottom: .75rem
+}
+
+.elfjS p {
+	margin-bottom: 1rem
+}
+
+.elfjS code {
+	background-color: #000a2008;
+	border-color: #0000000d;
+	border-radius: 5px;
+	border-width: 1px;
+	color: #262626bf;
+	font-family: Menlo, sans-serif;
+	font-size: .75rem;
+	line-height: 1rem;
+	padding: .125rem;
+	white-space: pre-wrap
+}
+
+.dark .elfjS code {
+	background-color: #ffffff12;
+	border-color: #f7faff1f;
+	color: #eff1f6bf
+}
+
+.elfjS blockquote {
+	border-color: #0000000d;
+	border-left-width: 4px;
+	color: #262626bf;
+	padding-left: 1rem
+}
+
+.dark .elfjS blockquote {
+	border-color: #f7faff1f;
+	color: #eff1f6bf
+}
+
+.content-example-testcase {
+	--tw-text-opacity: 1;
+	color: rgb(38, 38, 38/ var( --tw-text-opacity));
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+	margin-bottom: 1rem
+}
+
+.dark .content-example-testcase {
+	--tw-text-opacity: 1;
+	color: rgb(255, 255, 255/ var( --tw-text-opacity))
+}
+
+.elfjS img {
+	height: auto !important;
+	max-width: 100%
+}
+
+.elfjS .exRnx {
+	--tw-text-opacity: 1;
+	color: rgb(38, 38, 38/ var( --tw-text-opacity));
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+	margin-bottom: 1rem
+}
+
+:is(.dKYIq .elfjS .exRnx) {
+	--tw-text-opacity: 1;
+	color: rgb(38, 38, 38/ var( --tw-text-opacity))
+}
+
+.example-block {
+	border-color: var(--border-tertiary);
+	border-left-width: 2px;
+	color: var(--text-secondary);
+	font-size: 14px;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+	overflow: visible;
+	padding-left: 1rem
+}
+
+.example-block pre {
+	border-left-width: 0;
+	border-style: none;
+	padding-left: 0
+}
+
+.example-block .example-io {
+	font-family: Menlo, sans-serif;
+	font-size: .85rem
+}
+
+.example-block pre.example-io {
+	overflow: auto;
+	white-space: pre
+}
+
+.elfjS table {
+	--tw-text-opacity: 1;
+	border-radius: .5rem;
+	border-style: hidden;
+	box-shadow: 0 0 0 1px #e5e5e5;
+	color: rgb(38, 38, 38/ var( --tw-text-opacity));
+	margin-bottom: .75rem
+}
+
+.dark .elfjS table {
+	--tw-border-opacity: 1;
+	--tw-text-opacity: 1;
+	border-color: rgb(74, 74, 74/ var( --tw-border-opacity));
+	box-shadow: 0 0 0 1px #424242;
+	color: rgb(255, 255, 255/ var( --tw-text-opacity))
+}
+
+.elfjS table th {
+	--tw-border-opacity: 1;
+	background-color: #000a200d;
+	border-color: rgb(223, 223, 223/ var( --tw-border-opacity));
+	border-width: 1px;
+	font-weight: 500;
+	padding: .5rem .625rem
+}
+
+.elfjS table th:first-child {
+	border-top-left-radius: .5rem
+}
+
+.elfjS table th:last-child {
+	border-top-right-radius: .5rem
+}
+
+.dark .elfjS table th {
+	--tw-border-opacity: 1;
+	background-color: #ffffff1a;
+	border-color: rgb(74, 74, 74/ var( --tw-border-opacity))
+}
+
+.elfjS table td {
+	--tw-border-opacity: 1;
+	border-color: rgb(223, 223, 223/ var( --tw-border-opacity));
+	border-width: 1px;
+	padding: .5rem .625rem
+}
+
+.dark .elfjS table td {
+	--tw-border-opacity: 1;
+	border-color: rgb(74, 74, 74/ var( --tw-border-opacity))
+}
+
+.elfjS .language-md .table {
+	display: inline !important
+}

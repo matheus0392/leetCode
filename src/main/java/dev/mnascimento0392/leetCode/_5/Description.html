@@ -1,0 +1,45 @@
+<html lang="en" class="light" style="color-scheme: light; --nav-min-w: 731px;">
+		<head>
+			<link rel="stylesheet" href="../style.css">
+			<link rel="stylesheet" href="../HTMLContent.iso.css">
+		</head>
+	<body>
+		<div class="flex h-full w-full flex-col">
+		<div class="flex w-full flex-1 flex-col gap-4 overflow-y-auto px-4 py-5">
+<p><h2><strong>
+5 - Longest Palindromic Substring
+</strong></h2></p>
+<p>&nbsp;</p><div class="flex gap-1"><div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary text-difficulty-medium dark:text-difficulty-medium">Medium</div>
+<div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary ">Two Pointers</div>
+<div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary ">String</div>
+<div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary ">Dynamic Programming</div>
+</div><div class="elfjS"><p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword="palindromic-string"><em>palindromic</em></span> <span data-keyword="substring-nonempty"><em>substring</em></span> in <code>s</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre>
+<strong>Input:</strong> s = &quot;babad&quot;
+<strong>Output:</strong> &quot;bab&quot;
+<strong>Explanation:</strong> &quot;aba&quot; is also a valid answer.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> s = &quot;cbbd&quot;
+<strong>Output:</strong> &quot;bb&quot;
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+	<li><code>s</code> consist of only digits and English letters.</li>
+</ul>
+<p>&nbsp;</p><p><strong>Hints 0:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">How can we reuse a previously computed palindrome to compute a larger palindrome?</div>
+<p><strong>Hints 1:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">If “aba” is a palindrome, is “xabax” a palindrome? Similarly is “xabay” a palindrome?</div>
+<p><strong>Hints 2:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">Complexity based hint:</br>
+If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.</div>
+<p>&nbsp;</p>source: https://leetcode.com/problems/longest-palindromic-substring/description/</div></div></div></body></html>
