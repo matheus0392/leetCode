@@ -240,9 +240,9 @@ public class ChargeChallenge {
 
 				@Log
 				@TestInstance(Lifecycle.PER_CLASS)
-				class %s extends TestFormatter {
+				class %sTest extends TestFormatter {
 
-					%s() {
+					%sTest() {
 						setQuestion("%s. %s");
 					}
 
