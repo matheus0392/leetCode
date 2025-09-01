@@ -57,6 +57,9 @@ public class TestFormatter {
 	}
 
 	public static void assertFormatted(Object a, Object b) {
+		if (a == null) {
+			System.err.println("output NULL: ERR");
+		}
 		System.out.println(String.format("out: %s  expected: %s %s", a, b, a.equals(b) ? "OK" : "ERR"));
 		assertEquals(a, b);
 	}
