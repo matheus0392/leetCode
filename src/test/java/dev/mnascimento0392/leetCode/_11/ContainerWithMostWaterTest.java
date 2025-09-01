@@ -9,9 +9,9 @@ import lombok.extern.java.Log;
 
 @Log
 @TestInstance(Lifecycle.PER_CLASS)
-class ContainerWithMostWater extends TestFormatter {
+class ContainerWithMostWaterTest extends TestFormatter {
 
-	ContainerWithMostWater() {
+	ContainerWithMostWaterTest() {
 		setQuestion("11. Container With Most Water");
 	}
 
