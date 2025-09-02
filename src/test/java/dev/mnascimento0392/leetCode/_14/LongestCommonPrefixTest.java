@@ -25,4 +25,28 @@ class LongestCommonPrefixTest extends TestFormatter {
 		assertFormatted(new Solution().longestCommonPrefix(new String[] { "dog", "racecar", "car" }), "");
 	}
 
+	@Test
+	void test3() {
+		assertFormatted(new Solution().longestCommonPrefix(new String[] { "" }), "");
+	}
+
+	@Test
+	void test4() {
+		assertFormatted(new Solution().longestCommonPrefix(new String[] { "a" }), "a");
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(new Solution().longestCommonPrefix(new String[] { "aaa", "aaaaa", "aaaaab", "aaaaac" }), "aaa");
+	}
+
+	@Test
+	void test6() {
+		assertFormatted(new Solution().longestCommonPrefix(new String[] { "ab", "a" }), "a");
+	}
+
+	@Test
+	void test7() {
+		assertFormatted(new Solution().longestCommonPrefix(new String[] { "a", "a", "c" }), "");
+	}
 }
