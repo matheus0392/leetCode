@@ -1,5 +1,6 @@
-package dev.mnascimento0392.leetCode._155;
+package dev.mnascimento0392.leetCode._15;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -32,5 +33,18 @@ class ThreeSumTest extends TestFormatter {
 	void test3() {
 		assertFormatted(new Solution().threeSum(new int[] { 0, 0, 0 }), List.of(List.of(0, 0, 0)));
 	}
+	
+	@Test
+	void test4() {
+		List<String> scan = readTestCase("TestCase1.txt", 2);
+
+		int[] int1 = Arrays.stream(scan.get(0).split(",")).mapToInt(i -> Integer.valueOf(i)).toArray();
+		int[] int2 = Arrays.stream(scan.get(1).split(",")).mapToInt(i -> Integer.valueOf(i)).toArray();
+	
+
+		assertFormatted(new Solution().threeSum(int1), int2);
+	
+	}
+	
 
 }

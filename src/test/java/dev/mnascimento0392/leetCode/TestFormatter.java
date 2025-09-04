@@ -38,9 +38,7 @@ public class TestFormatter {
 
 	@AfterEach
 	void timerCount() {
-		long end = System.currentTimeMillis();
-		System.out.println((end - this.start) + " ms");
-		System.out.println();
+		System.out.println((System.currentTimeMillis() - start) + " ms\n");
 	}
 
 	public static void assertArrayFormatted(int[] a, int[] b) {
@@ -60,7 +58,7 @@ public class TestFormatter {
 		if (a == null) {
 			System.err.println("output NULL: ERR");
 		}
-		System.out.println(String.format("out: %s  expected: %s %s", a, b, a.equals(b) ? "OK" : "ERR"));
+		//System.out.println(String.format("out: %s  expected: %s %s", a, b, a.equals(b) ? "OK" : "ERR"));
 		assertEquals(a, b);
 	}
 
