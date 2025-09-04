@@ -25,4 +25,19 @@ class ThreeSumClosestTest extends TestFormatter {
 		assertFormatted(new Solution().threeSumClosest(new int[] { 0, 0, 0 }, 1), 0);
 	}
 
+	@Test
+	void test3() {
+		assertFormatted(new Solution().threeSumClosest(new int[] { 40, -100, 0, 4, -23, 20, 124 }, -40), -40);
+	}
+
+	@Test
+	void test4() {
+		assertFormatted(new Solution().threeSumClosest(new int[] { 4, 0, 5, -5, 3, 3, 0, -4, -5 }, -2), -2);
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(new Solution().threeSumClosest(new int[] { -4, 2, 2, 3, 3, 3 }, 0), 0);
+	}
+
 }
