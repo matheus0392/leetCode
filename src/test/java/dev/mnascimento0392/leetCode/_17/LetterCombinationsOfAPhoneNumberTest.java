@@ -19,7 +19,7 @@ class LetterCombinationsOfAPhoneNumberTest extends TestFormatter {
 
 	@Test
 	void test1() {
-		assertFormatted(new Solution().letterCombinations("23"),
+		assertFormatted(new Solution().letterCombinations("2345"),
 				List.of("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
 	}
 
