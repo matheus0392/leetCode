@@ -296,6 +296,8 @@ public class ChargeChallenge {
 		if (returnType.contains("[]")) {
 			output = "new " + returnType + "{ " + output.replaceAll(",", " ,") + " }";
 			testType = "assertArrayFormatted";
+		}else if(returnType.contains("list<")) {
+			output = "List.of( " + output.replace("[", "").replace("]", "").replaceAll(",", " ,") + " )";
 		}
 
 		return String.format("""
