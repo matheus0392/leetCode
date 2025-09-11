@@ -1,0 +1,76 @@
+<html lang="en" class="light" style="color-scheme: light; --nav-min-w: 731px;">
+		<head>
+			<link rel="stylesheet" href="../style.css">
+			<link rel="stylesheet" href="../HTMLContent.iso.css">
+		</head>
+	<body>
+		<div class="flex h-full w-full flex-col">
+		<div class="flex w-full flex-1 flex-col gap-4 overflow-y-auto px-4 py-5">
+<p><h2><strong>
+20 - Valid Parentheses
+</strong></h2></p>
+<p>&nbsp;</p><div class="flex gap-1"><div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary text-difficulty-easy dark:text-difficulty-easy">Easy</div>
+<div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary ">String</div>
+<div class="relative inline-flex items-center justify-center text-caption px-2 py-1 gap-1 rounded-full bg-fill-secondary ">Stack</div>
+</div><div class="elfjS"><p>Given a string <code>s</code> containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p>
+
+<p>An input string is valid if:</p>
+
+<ol>
+	<li>Open brackets must be closed by the same type of brackets.</li>
+	<li>Open brackets must be closed in the correct order.</li>
+	<li>Every close bracket has a corresponding open bracket of the same type.</li>
+</ol>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;()&quot;</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;()[]{}&quot;</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;(]&quot;</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">false</span></p>
+</div>
+
+<p><strong class="example">Example 4:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;([])&quot;</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 5:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;([)]&quot;</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">false</span></p>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>s</code> consists of parentheses only <code>&#39;()[]{}&#39;</code>.</li>
+</ul>
+<p>&nbsp;</p><p><strong>Hints 0:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">Use a stack of characters.</div>
+<p><strong>Hints 1:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">When you encounter an opening bracket, push it to the top of the stack.</div>
+<p><strong>Hints 2:</strong></p><div class="text-body text-sd-foreground mt-2 pl-7 elfjS ">When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false.</div>
+<p>&nbsp;</p>source: https://leetcode.com/problems/valid-parentheses/description/</div></div></div></body></html>

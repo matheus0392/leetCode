@@ -25,6 +25,9 @@ import org.json.JSONObject;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.java.Log;
+
+@Log
 public class GenerateSummaryHistory {
 
 	CookieManager cookieManager;
@@ -70,8 +73,12 @@ public class GenerateSummaryHistory {
 					- ((lastUserProfile.getUserContestRanking().getBadge() == null ? 0 : 1));
 			int diffCountAll = QuestionCount(user.getMatchedUser().getSubmitStats().getAcSubmissionNum(), "All")
 					- QuestionCount(lastUserProfile.getMatchedUser().getSubmitStats().getAcSubmissionNum(), "All");
-			//int diffCountType = QuestionCount(user.getMatchedUser().getSubmitStats().getAcSubmissionNum(), type)
-			//		- QuestionCount(lastUserProfile.getMatchedUser().getSubmitStats().getAcSubmissionNum(), type);
+			// int diffCountType =
+			// QuestionCount(user.getMatchedUser().getSubmitStats().getAcSubmissionNum(),
+			// type)
+			// -
+			// QuestionCount(lastUserProfile.getMatchedUser().getSubmitStats().getAcSubmissionNum(),
+			// type);
 			BigDecimal diffBeats = user.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage()
 					.subtract(lastUserProfile.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage());
 			BigDecimal diffBeatsType = QuestionPrcentage(
@@ -102,14 +109,14 @@ public class GenerateSummaryHistory {
 
 			String statistic = String.format(template, UserPublicProfile.USER, LocalDate.now(),
 					user.getMatchedUser().getProfile().getRanking(),
-					(diffRanking > 0 ? ":small_red_triangle:"
-							: (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
-					(diffRanking > 0 ? "**${\\\\large\\\\color{rec}"+diffRanking+"}$**" : ((diffRanking < 0 ? "**${\\\\large\\\\color{green}**"+diffRanking+"}$":""))),
+					(diffRanking > 0 ? ":small_red_triangle:" : (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
+					(diffRanking > 0 ? "**${\\\\large\\\\color{rec}" + diffRanking + "}$**"
+							: ((diffRanking < 0 ? "**${\\\\large\\\\color{green}**" + diffRanking + "}$" : ""))),
 					(int) Math.ceil(user.getUserContestRanking().getRating()),
 					diffContestRating != 0 ? ":small_red_triangle: " + diffContestRating : "",
 					user.getUserContestRanking().getBadge() == null ? 0
 							: ":star2:" + user.getUserContestRanking().getBadge(),
-					diffBadges != 0 ? diffBadges : "", user.getUserContestRanking().getGlobalRanking(),
+					diffBadges != 0 ? diffBadges : " ", user.getUserContestRanking().getGlobalRanking(),
 					user.getUserContestRanking().getTotalParticipants(),
 					user.getUserContestRanking().getTopPercentage(),
 					user.getUserContestRanking().getAttendedContestsCount(),
@@ -144,14 +151,13 @@ public class GenerateSummaryHistory {
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"));
 
-			System.err.println(statistic);
 			OverwriteFile(Path.of("statistics.md"), statistic, 2);
 
 			WriteFile(Path.of("LastStatistic.json"), response.body());
 
-			System.out.println("Updated statistics.md\n");
+			log.info("Updated statistics.md\n");
 		} else {
-			System.out.println(response.statusCode());
+			log.info(String.valueOf(response.statusCode()));
 		}
 
 	}
@@ -174,7 +180,7 @@ public class GenerateSummaryHistory {
 			* < :octocat: > [Link](https://github.com/matheus0392/leetCode/)
 
 			## %s
-			> ### **Ranking `%,d`** %s  %s &emsp;&emsp;&emsp; **Contest Rating `%,d`** %s &emsp;&emsp;&emsp; **Badges `%d`** %s
+			> ### **Ranking `%,d`** %s  %s &emsp;&emsp;&emsp; **Contest Rating `%,d`** %s &emsp;&emsp;&emsp; **Badges `%d`**%s
 			>**Global Ranking**  `%,d/%,d` &emsp;&emsp;&emsp; Top `%.2f%%` &emsp;&emsp;&emsp; Attended `%d`
 			>| Submissions     | All |:small_red_triangle:| %s EASY| %s MEDIUM| %s HARD|
 			>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
@@ -225,8 +231,8 @@ public class GenerateSummaryHistory {
 		}
 		return "";
 	}
-	
-	void WriteFile(Path path, String args ) {
+
+	void WriteFile(Path path, String args) {
 		try (Scanner sc = new Scanner(path.toFile());) {
 			StringBuilder buffer = new StringBuilder();
 			buffer.append(args);
