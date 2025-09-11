@@ -15,7 +15,7 @@ class ValidParenthesesTest extends TestFormatter {
 		setQuestion("20. Valid Parentheses");
 	}
 
-		@Test
+	@Test
 	void test1() {
 		assertFormatted(new Solution().isValid("()"), true);
 	}
@@ -40,5 +40,18 @@ class ValidParenthesesTest extends TestFormatter {
 		assertFormatted(new Solution().isValid("([)]"), false);
 	}
 
-
+	@Test
+	void test6() {
+		assertFormatted(new Solution().isValid("(("), false);
+	}
+	
+	@Test
+	void test7() {
+		assertFormatted(new Solution().isValid("))"), false);
+	}
+	
+	@Test
+	void test8() {
+		assertFormatted(new Solution().isValid("){"), false);
+	}
 }
