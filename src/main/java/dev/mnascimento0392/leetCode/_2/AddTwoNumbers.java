@@ -1,5 +1,7 @@
 package dev.mnascimento0392.leetCode._2;
 
+import dev.mnascimento0392.leetCode.Definitions.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {

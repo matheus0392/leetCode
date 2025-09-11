@@ -1,13 +1,13 @@
 package dev.mnascimento0392.leetCode._2;
 
-import static dev.mnascimento0392.leetCode.TestFormatter.*;
-
-import java.util.logging.Level;
+import static dev.mnascimento0392.leetCode.TestFormatter.assertFormatted;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+
+import dev.mnascimento0392.leetCode.Definitions.ListNode;
 
 @TestInstance(Lifecycle.PER_CLASS)
 class AddTwoNumbersTest {

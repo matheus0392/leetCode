@@ -3,3 +3,6 @@
 
 .projet
 .settings/*
+
+*.log
+LastStatistic.json

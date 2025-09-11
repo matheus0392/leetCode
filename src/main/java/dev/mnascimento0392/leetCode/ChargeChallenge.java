@@ -1,7 +1,6 @@
 package dev.mnascimento0392.leetCode;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.CookieHandler;
@@ -11,7 +10,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,17 +26,16 @@ public class ChargeChallenge {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
-		if (args.length == 0) {
-			System.out.print("Type the challenge name:\n>>");
-			args = new String[1];
-			args[0] = new Scanner(System.in).nextLine();
-		}
+		new GenerateSummaryHistory().getSummaryInfos();
 
 		CookieManager cookieManager = new CookieManager();
 		cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
 		CookieHandler.setDefault(cookieManager);
 
-		String url = "https://leetcode.com/problems/" + args[0] + "/description/";
+		System.out.print("Type the challenge name:\n>>");
+		String challenge = new Scanner(System.in).nextLine();
+
+		String url = String.format("https://leetcode.com/problems/%s/description/", challenge);
 
 		HttpClient client = HttpClient.newBuilder().cookieHandler(CookieManager.getDefault()).build();
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).header("Accept", "*/*")
@@ -86,8 +83,8 @@ public class ChargeChallenge {
 
 			String folder = ChargeChallenge.class.getCanonicalName();
 
-			folder = "src/main/java/" + folder.substring(0, folder.lastIndexOf(".") + 1).replaceAll("\\.", "/") + "_"
-					+ questionId + "/";
+			folder = String.format("src/main/java/%s_%s/",
+					folder.substring(0, folder.lastIndexOf(".") + 1).replaceAll("\\.", "/"), questionId);
 			Path path = Path.of(folder);
 
 			if (!path.toFile().exists()) {
@@ -123,25 +120,22 @@ public class ChargeChallenge {
 		FileOutputStream x = new FileOutputStream(file);
 		StringBuilder sb = new StringBuilder();
 
-		try (FileInputStream fis = new FileInputStream(
-				new File("src/main/java/dev/mnascimento0392/leetCode/style.css"))) {
-			sb.append(String.format("""
-					<html lang=\"en\" class=\"light\" style=\"color-scheme: light; --nav-min-w: 731px;\">
-							<head>
-								<link rel="stylesheet" href="../style.css">
-								<link rel="stylesheet" href="../HTMLContent.iso.css">
-							</head>
-						<body>
-							<div class=\"flex h-full w-full flex-col\">
-							<div class=\"flex w-full flex-1 flex-col gap-4 overflow-y-auto px-4 py-5\">
-					""", new String(fis.readAllBytes(), StandardCharsets.UTF_8)));
-		}
+		sb.append("""
+				<html lang=\"en\" class=\"light\" style=\"color-scheme: light; --nav-min-w: 731px;\">
+						<head>
+							<link rel="stylesheet" href="../style.css">
+							<link rel="stylesheet" href="../HTMLContent.iso.css">
+						</head>
+					<body>
+						<div class=\"flex h-full w-full flex-col\">
+						<div class=\"flex w-full flex-1 flex-col gap-4 overflow-y-auto px-4 py-5\">
+				""");
 
 		sb.append(String.format("""
 				<p><h2><strong>
-				%s
+				%s%s%s
 				</strong></h2></p>
-				""", questionId + " - " + questionTitle));
+				""", questionId, " - ", questionTitle));
 
 		sb.append("<p>&nbsp;</p>");
 		sb.append("<div class=\"flex gap-1\">");
@@ -296,7 +290,7 @@ public class ChargeChallenge {
 		if (returnType.contains("[]")) {
 			output = "new " + returnType + "{ " + output.replaceAll(",", " ,") + " }";
 			testType = "assertArrayFormatted";
-		}else if(returnType.contains("list<")) {
+		} else if (returnType.contains("list<")) {
 			output = "List.of( " + output.replace("[", "").replace("]", "").replaceAll(",", " ,") + " )";
 		}
 
@@ -311,7 +305,7 @@ public class ChargeChallenge {
 
 	}
 
-	static String fileName(String questionId, String questionTitle) {
+	private static String fileName(String questionId, String questionTitle) {
 		String folder = ChargeChallenge.class.getCanonicalName();
 
 		folder = "src/main/java/" + folder.substring(0, folder.lastIndexOf(".") + 1).replaceAll("\\.", "/") + "_"
@@ -320,7 +314,7 @@ public class ChargeChallenge {
 		return folder + toCamelCase(questionTitle);
 	}
 
-	static String toCamelCase(String string) {
+	private static String toCamelCase(String string) {
 		return String.join("", Arrays.stream(string.split(" "))
 				.map(s -> Character.toUpperCase(s.charAt(0)) + s.substring(1)).toList());
 	}
