@@ -23,7 +23,7 @@ class RemoveNthNodeFromEndOfListTest extends TestFormatter {
 
 	@Test
 	void test2() {
-		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1), 1), new ListNode());
+		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1), 1), null);
 	}
 
 	@Test
@@ -31,4 +31,18 @@ class RemoveNthNodeFromEndOfListTest extends TestFormatter {
 		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1, 2), 1), new ListNode(1));
 	}
 
+	@Test
+	void test4() {
+		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1, 2, 3), 1), new ListNode(1, 2));
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1, 2, 3), 2), new ListNode(1, 3));
+	}
+
+	@Test
+	void test0() {
+		assertFormatted(new Solution().removeNthFromEnd(new ListNode(1, 2, 3), 3), new ListNode(2, 3));
+	}
 }
