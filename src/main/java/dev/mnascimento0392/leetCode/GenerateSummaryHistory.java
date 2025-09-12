@@ -111,12 +111,12 @@ public class GenerateSummaryHistory {
 					user.getMatchedUser().getProfile().getRanking(),
 					(diffRanking > 0 ? ":small_red_triangle:" : (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
 					(diffRanking > 0 ? "**${\\\\large\\\\color{rec}" + diffRanking + "}$**"
-							: ((diffRanking < 0 ? "**${\\\\large\\\\color{green}**" + diffRanking + "}$" : ""))),
+							: ((diffRanking < 0 ? "**${\\\\large\\\\color{green}**" + String.format("%,d", diffRanking)  + "}$" : ""))),
 					(int) Math.ceil(user.getUserContestRanking().getRating()),
 					diffContestRating != 0 ? ":small_red_triangle: " + diffContestRating : "",
 					user.getUserContestRanking().getBadge() == null ? 0
 							: ":star2:" + user.getUserContestRanking().getBadge(),
-					diffBadges != 0 ? diffBadges : " ", user.getUserContestRanking().getGlobalRanking(),
+					diffBadges != 0 ? diffBadges : "", user.getUserContestRanking().getGlobalRanking(),
 					user.getUserContestRanking().getTotalParticipants(),
 					user.getUserContestRanking().getTopPercentage(),
 					user.getUserContestRanking().getAttendedContestsCount(),

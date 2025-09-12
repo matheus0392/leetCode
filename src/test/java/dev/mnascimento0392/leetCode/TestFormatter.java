@@ -1,6 +1,7 @@
 package dev.mnascimento0392.leetCode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
+import junit.framework.Assert;
 import lombok.Setter;
 
 @Setter
@@ -60,6 +62,7 @@ public class TestFormatter {
 				System.out.println(String.format("out: \t\t NULL  \nexpected: \t NULL OK"));
 			} else {
 				System.err.println("output NULL: ERR");
+				 fail("NULL");
 			}
 			return;
 		}
