@@ -135,7 +135,7 @@ public class ChargeChallenge {
 				<p><h2><strong>
 				%s%s%s
 				</strong></h2></p>
-				""", questionId, " - ", questionTitle));
+				""", questionId, ". ", questionTitle));
 
 		sb.append("<p>&nbsp;</p>");
 		sb.append("<div class=\"flex gap-1\">");

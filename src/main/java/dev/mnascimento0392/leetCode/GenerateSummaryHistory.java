@@ -110,8 +110,8 @@ public class GenerateSummaryHistory {
 			String statistic = String.format(template, UserPublicProfile.USER, LocalDate.now(),
 					user.getMatchedUser().getProfile().getRanking(),
 					(diffRanking > 0 ? ":small_red_triangle:" : (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
-					(diffRanking > 0 ? "**${\\\\large\\\\color{rec}" + diffRanking + "}$**"
-							: ((diffRanking < 0 ? "**${\\\\large\\\\color{green}**" + String.format("%,d", diffRanking)  + "}$" : ""))),
+					(diffRanking > 0 ? "${\\\\large\\\\color{rec}" + diffRanking + "}$"
+							: ((diffRanking < 0 ? "${\\\\large\\\\color{green}" + String.format("%,d", diffRanking)  + "}$" : ""))),
 					(int) Math.ceil(user.getUserContestRanking().getRating()),
 					diffContestRating != 0 ? ":small_red_triangle: " + diffContestRating : "",
 					user.getUserContestRanking().getBadge() == null ? 0

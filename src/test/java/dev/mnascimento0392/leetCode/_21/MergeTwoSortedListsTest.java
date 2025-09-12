@@ -24,12 +24,35 @@ class MergeTwoSortedListsTest extends TestFormatter {
 
 	@Test
 	void test2() {
-		assertFormatted(new Solution().mergeTwoLists(new ListNode(), new ListNode()), new ListNode());
+		assertFormatted(new Solution().mergeTwoLists(null, null), null);
 	}
 
 	@Test
 	void test3() {
-		assertFormatted(new Solution().mergeTwoLists(new ListNode(), new ListNode(0)), new ListNode(0));
+		assertFormatted(new Solution().mergeTwoLists(null, new ListNode(0)), new ListNode(0));
+	}
+
+	@Test
+	void test4() {
+		assertFormatted(
+				new Solution().mergeTwoLists(new ListNode(-100, -10, 0, 10, 100), new ListNode(0, 1, 2, 3, 4, 5)),
+				new ListNode(-100, -10, 0, 0, 1, 2, 3, 4, 5, 10, 100));
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(new Solution().mergeTwoLists(new ListNode(0), new ListNode(0, 1, 2, 3, 4, 5)),
+				new ListNode(0, 0, 1, 2, 3, 4, 5));
+	}
+
+	@Test
+	void test6() {
+		assertFormatted(new Solution().mergeTwoLists(new ListNode(0), new ListNode(0, 1)), new ListNode(0, 0, 1));
+	}
+
+	@Test
+	void test7() {
+		assertFormatted(new Solution().mergeTwoLists(new ListNode(0), new ListNode(1)), new ListNode(0, 1));
 	}
 
 }
