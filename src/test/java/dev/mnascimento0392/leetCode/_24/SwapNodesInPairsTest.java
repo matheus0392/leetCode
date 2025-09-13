@@ -35,5 +35,10 @@ class SwapNodesInPairsTest extends TestFormatter {
 	void test4() {
 		assertFormatted(new Solution().swapPairs(new ListNode(1, 2, 3)), new ListNode(2, 1, 3));
 	}
+	
+	@Test
+	void test5() {
+		assertFormatted(new Solution().swapPairs(new ListNode(100,10,0,1, 2, 3)), new ListNode(10,100, 1, 0,3,2));
+	}
 
 }
