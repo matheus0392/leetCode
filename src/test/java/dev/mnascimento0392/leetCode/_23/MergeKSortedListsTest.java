@@ -34,4 +34,29 @@ class MergeKSortedListsTest extends TestFormatter {
 		assertFormatted(new Solution().mergeKLists(new ListNode[] { null }), null);
 	}
 
+	@Test
+	void test4() {
+		assertFormatted(new Solution().mergeKLists(new ListNode[] { new ListNode(0), new ListNode(1) }),
+				new ListNode(0, 1));
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(
+				new Solution().mergeKLists(new ListNode[] { new ListNode(0), new ListNode(1), new ListNode(-1, 10) }),
+				new ListNode(-1, 0, 1, 10));
+	}
+
+	@Test
+	void test6() {
+		assertFormatted(new Solution().mergeKLists(new ListNode[] { null, null }), null);
+	}
+
+	@Test
+	void test7() {
+		assertFormatted(
+				new Solution().mergeKLists(
+						new ListNode[] { new ListNode(7, 8, 9), null, new ListNode(-3, -2, -1), new ListNode(0) }),
+				new ListNode(-3, -2, -1, 0, 7, 8, 9));
+	}
 }

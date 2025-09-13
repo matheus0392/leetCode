@@ -111,7 +111,7 @@ public class GenerateSummaryHistory {
 					user.getMatchedUser().getProfile().getRanking(),
 					(diffRanking > 0 ? ":small_red_triangle:" : (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
 					(diffRanking > 0 ? "${\\\\large\\\\color{rec}" + diffRanking + "}$"
-							: ((diffRanking < 0 ? "${\\\\large\\\\color{green}" + String.format("%,d", diffRanking)  + "}$" : ""))),
+							: ((diffRanking < 0 ? "${\\\\large\\\\color{green}" + String.format("%,d", diffRanking) + "}$" : ""))),
 					(int) Math.ceil(user.getUserContestRanking().getRating()),
 					diffContestRating != 0 ? ":small_red_triangle: " + diffContestRating : "",
 					user.getUserContestRanking().getBadge() == null ? 0
@@ -131,8 +131,8 @@ public class GenerateSummaryHistory {
 					QuestionCount(user.getUserProfileUserQuestionProgressV2().getNumAcceptedQuestions(), "Hard"),
 					QuestionCount(user.getAllQuestionsCount(), "Hard"),
 					user.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage(),
-					diffBeats.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
-					diffBeatsType.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
+					!diffBeats.equals(new BigDecimal(0)) ? diffBeats.toString() : "",
+					!diffBeatsType.equals(new BigDecimal(0)) ? diffBeatsType.toString() : "",
 					QuestionPrcentage(user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(),
 							"Easy"),
 					QuestionPrcentage(user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(),
@@ -150,6 +150,11 @@ public class GenerateSummaryHistory {
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Medium"),
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"));
+
+			if (diffSubmissions == 0/*diffContestRating == 0 && diffCountAll == 0 && diffRanking == 0*/ ) {
+				log.info("NOT Updated statistics.md\n");
+				return;
+			}
 
 			OverwriteFile(Path.of("statistics.md"), statistic, 2);
 
@@ -185,8 +190,8 @@ public class GenerateSummaryHistory {
 			>| Submissions     | All |:small_red_triangle:| %s EASY| %s MEDIUM| %s HARD|
 			>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
 			>| **Accepted**    |**`%d/%d`**|**%d** :heavy_check_mark:|`%d/%d`|`%d/%d`|`%d/%d`|
-			>| **Beats**       |**`%.2f%%`**|**%s \\ %s**|`%.2f%%`|`%.2f%%`|`%.2f%%`|
-			>| **Total**|**`%.2f%% (%d/%d)`**|**%s %s** :dart:|`%d/%d`|`%d/%d`|`%d/%d`|
+			>| **Beats**       |**`%.2f%%`**|**%s\\\\%s**|`%.2f%%`|`%.2f%%`|`%.2f%%`|
+			>| **Total**|**`%.2f%% (%d/%d)`**|**%s%s** :dart:|`%d/%d`|`%d/%d`|`%d/%d`|
 			""";
 
 	Optional<InfoQuestions> QuestionFilter(List<InfoQuestions> questions, String difficulty) {
