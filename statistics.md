@@ -2,6 +2,15 @@
 * < :octocat: > [Link](https://github.com/matheus0392/leetCode/)
 
 ## 2025-09-13
+> ### **Ranking `3.115.761`**    &emsp;&emsp;&emsp; **Contest Rating `1.519`**  &emsp;&emsp;&emsp; **Badges `0`**
+>**Global Ranking**  `288.286/754.079` &emsp;&emsp;&emsp; Top `38,73%` &emsp;&emsp;&emsp; Attended `1`
+>| Submissions     | All |:small_red_triangle:|  EASY| :heavy_check_mark: MEDIUM|  HARD|
+>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
+>| **Accepted**    |**`27/3681`**|**1** :heavy_check_mark:|`7/897`|`17/1916`|`3/868`|
+>| **Beats**       |**`40,90%`**|**1.4\\0.00**|`17,71%`|`52,50%`|`32,57%`|
+>| **Total**|**`30,80% (28/91)`**|**(1)** :dart:|`7/11`|`18/66`|`3/14`|
+
+## 2025-09-13
 > ### **Ranking `3.115.761`** :small_red_triangle_down:  ${\\large\\color{green}-61.931}$ &emsp;&emsp;&emsp; **Contest Rating `1.519`**  &emsp;&emsp;&emsp; **Badges `0`**
 >**Global Ranking**  `288.286/754.079` &emsp;&emsp;&emsp; Top `38,73%` &emsp;&emsp;&emsp; Attended `1`
 >| Submissions     | All |:small_red_triangle:|  EASY|  MEDIUM| :heavy_check_mark: HARD|
