@@ -82,10 +82,10 @@ public class GenerateSummaryHistory {
 			BigDecimal diffBeats = user.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage()
 					.subtract(lastUserProfile.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage());
 			BigDecimal diffBeatsType = QuestionPrcentage(
-					user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(), "Easy")
+					user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(), type)
 					.subtract(QuestionPrcentage(
 							lastUserProfile.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(),
-							"Easy"));
+							type));
 
 			int diffSubmissions = QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(),
 					"All")
@@ -111,7 +111,9 @@ public class GenerateSummaryHistory {
 					user.getMatchedUser().getProfile().getRanking(),
 					(diffRanking > 0 ? ":small_red_triangle:" : (diffRanking < 0 ? ":small_red_triangle_down:" : "")),
 					(diffRanking > 0 ? "${\\\\large\\\\color{rec}" + diffRanking + "}$"
-							: ((diffRanking < 0 ? "${\\\\large\\\\color{green}" + String.format("%,d", diffRanking) + "}$" : ""))),
+							: ((diffRanking < 0
+									? "${\\\\large\\\\color{green}" + String.format("%,d", diffRanking) + "}$"
+									: ""))),
 					(int) Math.ceil(user.getUserContestRanking().getRating()),
 					diffContestRating != 0 ? ":small_red_triangle: " + diffContestRating : "",
 					user.getUserContestRanking().getBadge() == null ? 0
@@ -142,7 +144,9 @@ public class GenerateSummaryHistory {
 					submissionsPercent,
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
+
 					diffSubmissionPercent.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
+
 					diffSubmissions != 0 ? "(" + diffSubmissions + ")" : "",
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
