@@ -279,6 +279,8 @@ public class ChargeChallenge {
 			if (inputs.get(x).getType().contains("[]")) {
 				input_ = "new " + inputs.get(x).getType() + "{ "
 						+ input_.replace("[", "").replace("]", "").replaceAll(",", " ,") + " }";
+			} else if (inputs.get(x).getType().contains("ListNode")) {
+				input_ = "new ListNode( " + input_.replace("[", "").replace("]", "").replaceAll(",", " ,") + " )";
 			}
 
 			input += x > 0 ? ", " : "";
@@ -292,6 +294,8 @@ public class ChargeChallenge {
 			testType = "assertArrayFormatted";
 		} else if (returnType.contains("list<")) {
 			output = "List.of( " + output.replace("[", "").replace("]", "").replaceAll(",", " ,") + " )";
+		} else if (returnType.contains("ListNode")) {
+			output = "new ListNode( " + output.replace("[", "").replace("]", "").replaceAll(",", " ,") + " )";
 		}
 
 		return String.format("""

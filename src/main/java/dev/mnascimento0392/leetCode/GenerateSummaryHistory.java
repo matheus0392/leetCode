@@ -131,8 +131,8 @@ public class GenerateSummaryHistory {
 					QuestionCount(user.getUserProfileUserQuestionProgressV2().getNumAcceptedQuestions(), "Hard"),
 					QuestionCount(user.getAllQuestionsCount(), "Hard"),
 					user.getUserProfileUserQuestionProgressV2().getTotalQuestionBeatsPercentage(),
-					!diffBeats.equals(new BigDecimal(0)) ? diffBeats.toString() : "",
-					!diffBeatsType.equals(new BigDecimal(0)) ? diffBeatsType.toString() : "",
+					!diffBeats.equals(new BigDecimal(0)) ? diffBeats + "%" : "",
+					!diffBeatsType.equals(new BigDecimal(0)) ? diffBeatsType + "%" : "",
 					QuestionPrcentage(user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(),
 							"Easy"),
 					QuestionPrcentage(user.getUserProfileUserQuestionProgressV2().getUserSessionBeatsPercentage(),
@@ -151,7 +151,7 @@ public class GenerateSummaryHistory {
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Hard"));
 
-			if (diffSubmissions == 0/*diffContestRating == 0 && diffCountAll == 0 && diffRanking == 0*/ ) {
+			if (diffSubmissions == 0) {
 				log.info("NOT Updated statistics.md\n");
 				return;
 			}

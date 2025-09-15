@@ -1,5 +1,7 @@
 package dev.mnascimento0392.leetCode._25;
 
+import dev.mnascimento0392.leetCode.Definitions.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -12,6 +14,7 @@ package dev.mnascimento0392.leetCode._25;
  */
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
+		return head;
         
     }
 }
