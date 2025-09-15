@@ -24,5 +24,15 @@ class RemoveDuplicatesFromSortedArrayTest extends TestFormatter {
 	void test2() {
 		assertFormatted(new Solution().removeDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }), 5);
 	}
+	
+	@Test
+	void test3() {
+		assertFormatted(new Solution().removeDuplicates(new int[] {  }), 0);
+	}
+	
+	@Test
+	void test4() {
+		assertFormatted(new Solution().removeDuplicates(new int[] { 6 }), 1);
+	}
 
 }
