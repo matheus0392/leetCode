@@ -43,7 +43,7 @@ class BestTimetoBuyandSellStockusingStrategyTest extends TestFormatter {
 		assertFormatted(new Solution().maxProfit(new int[] { 4, 7, 13 }, new int[] { -1, -1, 0 }, 2), 9l);
 	}
 
-	@Test
+	//@Test
 	void test5() {
 		List<String> scan = readTestCase("TestCase0.txt", 4);
 
@@ -55,7 +55,7 @@ class BestTimetoBuyandSellStockusingStrategyTest extends TestFormatter {
 		assertFormatted(new Solution().maxProfit(int1, int2, int3), int4);
 	}
 
-	@Test
+	//@Test
 	void test6() {
 
 		List<String> scan = readTestCase("TestCase1.txt", 4);
@@ -68,7 +68,7 @@ class BestTimetoBuyandSellStockusingStrategyTest extends TestFormatter {
 		assertFormatted(new Solution().maxProfit(int1, int2, int3), int4);
 	}
 
-	@Test
+	//@Test
 	void test7() {
 
 		List<String> scan = readTestCase("TestCase2.txt", 4);

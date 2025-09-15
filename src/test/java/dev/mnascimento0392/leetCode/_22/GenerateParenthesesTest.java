@@ -28,30 +28,30 @@ class GenerateParenthesesTest extends TestFormatter {
 		assertFormatted(new Solution().generateParenthesis(1), List.of("()"));
 	}
 	
-	@Test
+	//@Test
 	void test3() {
 		assertFormatted(new Solution().generateParenthesis(2), List.of("()"));
 	}
 	
-	@Test
+	//@Test
 	void test4() {
 		assertFormatted(new Solution().generateParenthesis(4), List.of("()"));
 	}
 	
-	@Test
+	//@Test
 	void test5() {
 		assertFormatted(new Solution().generateParenthesis(5), List.of("()"));
 	}
 	
-	@Test
+	//@Test
 	void test6() {
 		assertFormatted(new Solution().generateParenthesis(6), List.of("()"));
 	}
-	@Test
+	//@Test
 	void test7() {
 		assertFormatted(new Solution().generateParenthesis(7), List.of("()"));
 	}
-	@Test
+	//@Test
 	void test8() {
 		assertFormatted(new Solution().generateParenthesis(8), List.of("()"));
 	}

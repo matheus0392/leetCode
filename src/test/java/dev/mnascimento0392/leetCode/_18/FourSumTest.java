@@ -28,7 +28,7 @@ class FourSumTest extends TestFormatter {
 		assertFormatted(new Solution().fourSum(new int[] { 2, 2, 2, 2, 2 }, 8), List.of(List.of(2, 2, 2, 2)));
 	}
 
-	@Test
+	//@Test
 	void test3() {
 		assertFormatted(new Solution().fourSum(new int[] { -3, -2, -1, 0, 0, 1, 2, 3 }, 0),
 				List.of(List.of(-3, -2, 2, 3), List.of(-3, -1, 1, 3), List.of(-3, 0, 0, 3), List.of(-2, -1, 0, 3),

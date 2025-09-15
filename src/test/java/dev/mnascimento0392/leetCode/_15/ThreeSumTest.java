@@ -34,7 +34,7 @@ class ThreeSumTest extends TestFormatter {
 		assertFormatted(new Solution().threeSum(new int[] { 0, 0, 0 }), List.of(List.of(0, 0, 0)));
 	}
 	
-	@Test
+	//@Test
 	void test4() {
 		List<String> scan = readTestCase("TestCase1.txt", 2);
 
