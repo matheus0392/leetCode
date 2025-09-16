@@ -144,9 +144,7 @@ public class GenerateSummaryHistory {
 					submissionsPercent,
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
-
-					diffSubmissionPercent.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
-
+					!diffSubmissionPercent.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
 					diffSubmissions != 0 ? "(" + diffSubmissions + ")" : "",
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
