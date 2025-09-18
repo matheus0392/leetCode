@@ -144,7 +144,7 @@ public class GenerateSummaryHistory {
 					submissionsPercent,
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "All"),
-					!diffSubmissionPercent.equals(new BigDecimal(0)) ? diffSubmissionPercent.toString() : "",
+					!diffSubmissionPercent.equals(new BigDecimal(0)) ? diffSubmissionPercent + "%" : "",
 					diffSubmissions != 0 ? "(" + diffSubmissions + ")" : "",
 					QuestionCount(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
 					QuestionSubmissions(user.getMatchedUser().getSubmitStats().getTotalSubmissionNum(), "Easy"),
@@ -193,7 +193,7 @@ public class GenerateSummaryHistory {
 			>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
 			>| **Accepted**    |**`%d/%d`**|**%d** :heavy_check_mark:|`%d/%d`|`%d/%d`|`%d/%d`|
 			>| **Beats**       |**`%.2f%%`**|**%s\\\\%s**|`%.2f%%`|`%.2f%%`|`%.2f%%`|
-			>| **Total**|**`%.2f%% (%d/%d)`**|**%s%s** :dart:|`%d/%d`|`%d/%d`|`%d/%d`|
+			>| **Total**|**`%.2f%% (%d/%d)`**|**%s %s** :dart:|`%d/%d`|`%d/%d`|`%d/%d`|
 			""";
 
 	Optional<InfoQuestions> QuestionFilter(List<InfoQuestions> questions, String difficulty) {
