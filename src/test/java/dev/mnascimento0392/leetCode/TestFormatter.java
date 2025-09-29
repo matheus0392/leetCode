@@ -61,7 +61,7 @@ public class TestFormatter {
 				System.out.println(String.format("out: \t\t NULL  \nexpected: \t NULL OK"));
 			} else {
 				System.err.println("output NULL: ERR");
-				 fail("NULL");
+				fail("NULL");
 			}
 			return;
 		}
@@ -78,8 +78,6 @@ public class TestFormatter {
 		Path path = Path.of(folder);
 		File file = path.toFile();
 
-		String input1 = null, input2 = null, input3 = null, input4 = null;
-
 		List<String> scan = new ArrayList<>();
 		try (Scanner scanner = new Scanner(file)) {
 			for (int x = 0; x < lines; x++) {
@@ -94,4 +92,12 @@ public class TestFormatter {
 		return scan;
 	}
 
+	public String[] toStringArray(String string) {
+		List<String> yyy = Arrays.stream(string.split(",")).map(i -> i.replaceAll("\"", "")).toList();
+		String[] str2 = new String[yyy.size()];
+		for (int j = 0; j < yyy.size(); j++) {
+			str2[j] = yyy.get(j);
+		}
+		return str2;
+	}
 }
