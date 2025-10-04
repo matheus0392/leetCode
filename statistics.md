@@ -6,6 +6,15 @@
 >**Global Ranking**  `293.617/769.342` &emsp;&emsp;&emsp; Top `38,66%` &emsp;&emsp;&emsp; Attended `1`
 >| Submissions     | All |:small_red_triangle:|  EASY| :heavy_check_mark: MEDIUM|  HARD|
 >|----------------:|:---:|-------------------:|-------:|---------:|-------:|
+>| **Accepted**    |**`37/3700`**|**1** :heavy_check_mark:|`10/904`|`21/1923`|`6/873`|
+>| **Beats**       |**`52,00%`**|**0.9%\\1.06%**|`29,52%`|`57,24%`|`50,86%`|
+>| **Total**|**`31,54% (38/121)`**|**0.09% (2)** :dart:|`10/16`|`22/85`|`6/20`|
+
+## 2025-10-04
+> ### **Ranking `2.690.788`**    &emsp;&emsp;&emsp; **Contest Rating `1.519`**  &emsp;&emsp;&emsp; **Badges `0`**
+>**Global Ranking**  `293.617/769.342` &emsp;&emsp;&emsp; Top `38,66%` &emsp;&emsp;&emsp; Attended `1`
+>| Submissions     | All |:small_red_triangle:|  EASY| :heavy_check_mark: MEDIUM|  HARD|
+>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
 >| **Accepted**    |**`36/3700`**|**1** :heavy_check_mark:|`10/904`|`20/1923`|`6/873`|
 >| **Beats**       |**`51,10%`**|**0.9%\\1.16%**|`29,52%`|`56,18%`|`50,86%`|
 >| **Total**|**`31,45% (37/119)`**|**-0.95% (7)** :dart:|`10/16`|`21/83`|`6/20`|
