@@ -1,6 +1,15 @@
 * < :computer: > [Link](https://leetcode.com/u/mnascimento0392/)
 * < :octocat: > [Link](https://github.com/matheus0392/leetCode/)
 
+## 2025-10-04
+> ### **Ranking `2.690.788`** :small_red_triangle_down:  ${\\large\\color{green}-37.153}$ &emsp;&emsp;&emsp; **Contest Rating `1.519`**  &emsp;&emsp;&emsp; **Badges `0`**
+>**Global Ranking**  `293.617/769.342` &emsp;&emsp;&emsp; Top `38,66%` &emsp;&emsp;&emsp; Attended `1`
+>| Submissions     | All |:small_red_triangle:|  EASY|  MEDIUM| :heavy_check_mark: HARD|
+>|----------------:|:---:|-------------------:|-------:|---------:|-------:|
+>| **Accepted**    |**`35/3700`**|**1** :heavy_check_mark:|`10/904`|`19/1923`|`6/873`|
+>| **Beats**       |**`50,20%`**|**1.1%\\4.64%**|`29,52%`|`55,02%`|`50,86%`|
+>| **Total**|**`32,40% (36/112)`**|**0.55% (1)** :dart:|`10/16`|`20/76`|`6/20`|
+
 ## 2025-09-30
 > ### **Ranking `2.727.941`** :small_red_triangle_down:  ${\\large\\color{green}-44.623}$ &emsp;&emsp;&emsp; **Contest Rating `1.519`**  &emsp;&emsp;&emsp; **Badges `0`**
 >**Global Ranking**  `291.905/765.019` &emsp;&emsp;&emsp; Top `38,65%` &emsp;&emsp;&emsp; Attended `1`
