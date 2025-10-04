@@ -23,7 +23,6 @@ class Solution {
 		int start = 0, end = nums.length - 1, indexTest = 0, leftIndex = -1;
 		while (true) {
 			if (end - start <= 1) {
-				// if()
 				leftIndex = end;
 				if (indexTest + 1 == nums.length) {
 					leftIndex = -1;
@@ -35,7 +34,6 @@ class Solution {
 				start = indexTest;
 			} else {
 				end = indexTest;
-				// break;
 			}
 		}
 
