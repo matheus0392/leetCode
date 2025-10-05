@@ -26,10 +26,10 @@ class Solution {
                     }
                     setRows.get(i).add(board[i][j]);
 
-                    if (setColumns.get(j % 9).contains(board[i][j])) {
+                    if (setColumns.get(j).contains(board[i][j])) {
                         return false;
                     }
-                    setColumns.get(j % 9).add(board[i][j]);
+                    setColumns.get(j).add(board[i][j]);
 
                     if (setBoxes.get(j / 3 + (i / 3) * 3).contains(board[i][j])) {
                         return false;

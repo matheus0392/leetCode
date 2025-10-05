@@ -100,4 +100,18 @@ public class TestFormatter {
 		}
 		return str2;
 	}
+
+	public static void assertMatrixFormatted(char[][] a, char[][] b) {
+
+		for (int i = 0; i < a.length; i++) {
+			System.out.println(String.format("out: %s  expected: %s %s", Arrays.toString(a[i]), Arrays.toString(b[i]),
+					Arrays.compare(a[i], b[i]) == 0 ? "OK" : "ERR"));
+		}
+		
+		for (int i = 0; i < a.length; i++) {
+			assertEquals(Arrays.toString(a[i]), Arrays.toString(b[i]));
+		}
+
+		// assertEquals(Arrays.toString(sudoku), Arrays.toString(sudoku2));
+	}
 }
