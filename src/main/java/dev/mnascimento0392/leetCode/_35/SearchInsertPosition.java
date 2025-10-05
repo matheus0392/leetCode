@@ -6,8 +6,6 @@ class Solution {
 		int start = 0, end = nums.length - 1, index = -1;
 
 		while (start <= end) {
-
-			// index = start + (end - start + 1) / 2;
 			index = (start + end) / 2;
 
 			if (nums[index] == target) {
@@ -20,23 +18,10 @@ class Solution {
 				end = index - 1;
 			}
 		}
-		// index = (start + end ) / 2;
 
-		//if (index == nums.length - 1) {
-			if (target > nums[index]) {
-				return ++index;
-			}
-		//}
-
-		/*if (index == 0) {
-			if (target > nums[index]) {
-				return ++index;
-			}
-		}*/
-
-		/*
-		 * if (index == nums.length - 1) { index++; }
-		 */
+		if (target > nums[index]) {
+			return ++index;
+		}
 
 		return index;
 
