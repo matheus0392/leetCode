@@ -111,7 +111,5 @@ public class TestFormatter {
 		for (int i = 0; i < a.length; i++) {
 			assertEquals(Arrays.toString(a[i]), Arrays.toString(b[i]));
 		}
-
-		// assertEquals(Arrays.toString(sudoku), Arrays.toString(sudoku2));
 	}
 }
