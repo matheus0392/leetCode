@@ -7,9 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 class Solution {
-	int count = 0;
 	Set<String> already = new HashSet<>();
-	// Set<String> already = new HashSet<>();
 
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		int[] candidates_ = Arrays.stream(candidates).filter(c -> c <= target).toArray();
@@ -33,15 +31,6 @@ class Solution {
 				list.addAll(arrayList);
 				list.add(candidates_[i]);
 				List<Integer> sorted = list.stream().sorted().toList();
-
-				/*String asString = String.valueOf(sorted.get(0));
-				if (sorted.size() > 1) {
-					asString = sorted.stream().map(a -> String.valueOf(a)).reduce((a, b) -> a + b).orElse("");
-				}
-				if (!already.contains(asString)) {
-					resp.add(sorted);
-					already.add(asString);
-				}*/
 				 if (!already(resp, sorted)) {
 		            resp.add(sorted);
 		            return;
@@ -53,7 +42,6 @@ class Solution {
 			list.add(candidates_[i]);
 			sum(resp, candidates_, list, target, currentSum);
 		}
-
 	}
 
 	private boolean already(List<List<Integer>> resp, List<Integer> list) {
@@ -70,7 +58,6 @@ class Solution {
 				}
 			}
 		}
-
 		return false;
 	}
 }
