@@ -30,4 +30,38 @@ class FirstMissingPositiveTest extends TestFormatter {
 		assertFormatted(new Solution().firstMissingPositive(new int[] { 7, 8, 9, 11, 12 }), 1);
 	}
 
+	@Test
+	void test4() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { 3, 2, 1, 0 }), 4);
+	}
+
+	@Test
+	void test5() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { -1, -2, 0 }), 1);
+	}
+
+	@Test
+	void test6() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { -1, -2 }), 1);
+	}
+
+	@Test
+	void test7() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { -1, 1, -2 }), 2);
+	}
+
+	@Test
+	void test8() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { 1, 4, 3, 2, 5, 7, 9, 8, 10 }), 6);
+	}
+
+	@Test
+	void test9() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { 1 }), 2);
+	}
+	
+	@Test
+	void test10() {
+		assertFormatted(new Solution().firstMissingPositive(new int[] { -1 }), 1);
+	}
 }
