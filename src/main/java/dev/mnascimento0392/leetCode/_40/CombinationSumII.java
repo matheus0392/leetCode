@@ -7,15 +7,13 @@ import java.util.Map;
 
 class Solution {
 	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-
 		Map<Integer, Integer> map = new HashMap<>();
-		for (int i = 0 ; i < candidates.length; i++) {
+		for (int i = 0; i < candidates.length; i++) {
 			Integer x = map.putIfAbsent(candidates[i], 1);
 			if (x != null) {
 				map.put(candidates[i], x + 1);
 			}
 		}
-
 		int totalSum = 0;
 		List<Integer> newCandidates = new ArrayList<Integer>();
 		for (Integer each : map.keySet()) {
@@ -30,11 +28,9 @@ class Solution {
 				}
 			}
 		}
-
 		candidates = newCandidates.stream().mapToInt(Integer::intValue).toArray();
 		List<List<Integer>> resp = new ArrayList<>();
 		solve(0, candidates, resp, target, new ArrayList<Integer>(), 0);
-
 		return resp;
 	}
 
@@ -45,17 +41,15 @@ class Solution {
 			}
 			return;
 		}
-
 		if (sum > target) {
 			return;
 		}
-		
 		for (int i = start + 1; i <= candidates.length; i++) {
 			list.add(candidates[i - 1]);
 			solve(i, candidates, resp, target, list, sum + candidates[i - 1]);
 			list.remove(list.size() - 1);
-			
-			if(i< candidates.length && candidates[i - 1] == candidates[i]) {
+
+			if (i < candidates.length && candidates[i - 1] == candidates[i]) {
 				i++;
 			}
 		}
@@ -71,20 +65,16 @@ class Solution {
 					count.put(eachInt, c + 1);
 				}
 			}
-
 			for (Integer eachInt : list) {
 				Integer c = count.putIfAbsent(eachInt, -1);
 				if (c != null) {
 					count.put(eachInt, c - 1);
 				}
 			}
-
 			if (count.values().stream().allMatch(t -> t.equals(0))) {
 				return false;
 			}
-
 		}
-
 		return true;
 	}
 }
