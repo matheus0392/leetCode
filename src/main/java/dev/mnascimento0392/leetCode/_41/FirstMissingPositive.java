@@ -6,9 +6,7 @@ import java.util.Set;
 class Solution {
 	public int firstMissingPositive(int[] nums) {
 
-		int min = Integer.MAX_VALUE;
-
-		Set<Integer> set = new HashSet();
+		Set<Integer> set = new HashSet<Integer>();
 
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] > 0) {

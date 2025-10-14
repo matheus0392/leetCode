@@ -92,6 +92,10 @@ public class TestFormatter {
 		return scan;
 	}
 
+	public int[] scanToInt(String string) {
+		return Arrays.stream(string.split(",")).mapToInt(i -> Integer.valueOf(i)).toArray();
+	}
+
 	public String[] toStringArray(String string) {
 		List<String> yyy = Arrays.stream(string.split(",")).map(i -> i.replaceAll("\"", "")).toList();
 		String[] str2 = new String[yyy.size()];
@@ -107,7 +111,7 @@ public class TestFormatter {
 			System.out.println(String.format("out: %s  expected: %s %s", Arrays.toString(a[i]), Arrays.toString(b[i]),
 					Arrays.compare(a[i], b[i]) == 0 ? "OK" : "ERR"));
 		}
-		
+
 		for (int i = 0; i < a.length; i++) {
 			assertEquals(Arrays.toString(a[i]), Arrays.toString(b[i]));
 		}
